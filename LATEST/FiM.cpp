@@ -2,6 +2,6 @@
 
 class_FiM FiM;
 
-void class_FiM::InitFunction(void){
+FUNC(void, FIM_CODE) class_FiM::InitFunction(void){
 }
 
