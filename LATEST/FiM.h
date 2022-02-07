@@ -26,7 +26,6 @@ class class_FiM{
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, FIM_CODE) InitFunction                (void);
       FUNC(void, FIM_CODE) GetFunctionPermission       (void);
       FUNC(void, FIM_CODE) SetFunctionAvailable        (void);
       FUNC(void, FIM_CODE) DemTriggerOnMonitorStatus   (void);

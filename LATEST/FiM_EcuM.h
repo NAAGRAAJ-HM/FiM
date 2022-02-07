@@ -1,14 +1,15 @@
+#pragma once
 /*****************************************************/
-/* File   : FiM.cpp                                  */
+/* File   : FiM_EcuM.h                               */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "FiM.h"
+#include "Compiler_Cfg_FiM.h"
 
-#include "FiM_EcuM.h"
+#include "EcuM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -21,6 +22,13 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
+class class_FiM_EcuM : public class_EcuM_Client{
+   public:
+/*****************************************************/
+/* FUNCTIONS                                         */
+/*****************************************************/
+      FUNC(void, FIM_CODE) InitFunction(void);
+};
 
 /*****************************************************/
 /* CONSTS                                            */
@@ -33,45 +41,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_FiM_EcuM FiM_EcuM;
-class_EcuM_Client *EcuM_Client_ptr_FiM = &FiM_EcuM;
-class_FiM FiM;
-
-/*****************************************************/
-/* FUNCTIONS                                         */
-/*****************************************************/
-FUNC(void, FIM_CODE) class_FiM_EcuM::InitFunction(void){
-}
-
-FUNC(void, FIM_CODE) class_FiM::GetFunctionPermission(void){
-}
-
-FUNC(void, FIM_CODE) class_FiM::SetFunctionAvailable(void){
-}
-
-FUNC(void, FIM_CODE) class_FiM::DemTriggerOnMonitorStatus(void){
-}
-
-FUNC(void, FIM_CODE) class_FiM::DemTriggerOnComponentStatus(void){
-}
-
-FUNC(void, FIM_CODE) class_FiM::DemInitFunction(void){
-}
-
-FUNC(void, FIM_CODE) class_FiM::GetVersionInfo(void){
-}
-
-FUNC(void, FIM_CODE) class_FiM::MainFunction(void){
-}
-
-FUNC(void, FIM_CODE) class_FiM::FunctionInhibition(void){
-}
-
-FUNC(void, FIM_CODE) class_FiM::ControlFunctionAvailable(void){
-}
-
-FUNC(void, FIM_CODE) class_FiM::FunctionIdType(void){
-}
+extern class_EcuM_Client *EcuM_Client_ptr_FiM;
 
 /*****************************************************/
 /* EOF                                               */
