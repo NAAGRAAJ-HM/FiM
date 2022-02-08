@@ -32,7 +32,6 @@ class class_FiM{
       FUNC(void, FIM_CODE) DemTriggerOnComponentStatus (void);
       FUNC(void, FIM_CODE) DemInitFunction             (void);
       FUNC(void, FIM_CODE) GetVersionInfo              (void);
-      FUNC(void, FIM_CODE) MainFunction                (void);
       FUNC(void, FIM_CODE) FunctionInhibition          (void);
       FUNC(void, FIM_CODE) ControlFunctionAvailable    (void);
       FUNC(void, FIM_CODE) FunctionIdType              (void);
