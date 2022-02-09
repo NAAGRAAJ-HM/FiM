@@ -36,19 +36,20 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_FiM_EcuM FiM_EcuM;
-class_EcuM_Client *EcuM_Client_ptr_FiM = &FiM_EcuM;
-class_FiM_SchM FiM_SchM;
-class_SchM_Client *SchM_Client_ptr_FiM = &FiM_SchM;
+interface_FiM_EcuM_Init FiM_EcuM_Init;
+interface_FiM_SchM_Main FiM_SchM_Main;
 class_FiM FiM;
+
+interface_EcuM_Init_Client *EcuM_Init_Client_ptr_FiM = &FiM_EcuM_Init;
+interface_SchM_Main_Client *SchM_Main_Client_ptr_FiM = &FiM_SchM_Main;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, FIM_CODE) class_FiM_EcuM::InitFunction(void){
+FUNC(void, FIM_CODE) interface_FiM_EcuM_Init::InitFunction(void){
 }
 
-FUNC(void, FIM_CODE) class_FiM_SchM::MainFunction(void){
+FUNC(void, FIM_CODE) interface_FiM_SchM_Main::MainFunction(void){
 }
 
 FUNC(void, FIM_CODE) class_FiM::GetFunctionPermission(void){
