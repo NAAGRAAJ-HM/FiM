@@ -6,15 +6,12 @@
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "FiM.h"
+#include "module.h"
 
-#include "FiM_EcuM.h"
-#include "FiM_SchM.h"
+#include "FiM_Unused.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
-/*****************************************************/
-
 /*****************************************************/
 
 /*****************************************************/
@@ -24,6 +21,12 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
+class module_FiM : public class_module{
+   public:
+      FUNC(void, FIM_CODE) InitFunction   (void);
+      FUNC(void, FIM_CODE) DeInitFunction (void);
+      FUNC(void, FIM_CODE) MainFunction   (void);
+};
 
 /*****************************************************/
 /* CONSTS                                            */
@@ -36,47 +39,45 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-interface_FiM_EcuM_Init FiM_EcuM_Init;
-interface_FiM_SchM_Main FiM_SchM_Main;
-class_FiM FiM;
+module_FiM FiM;
 
-interface_EcuM_Init_Client *EcuM_Init_Client_ptr_FiM = &FiM_EcuM_Init;
-interface_SchM_Main_Client *SchM_Main_Client_ptr_FiM = &FiM_SchM_Main;
+interface_EcuM_Client *EcuM_Client_ptr_FiM = &FiM;
+interface_SchM_Client *SchM_Client_ptr_FiM = &FiM;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, FIM_CODE) interface_FiM_EcuM_Init::InitFunction(void){
+FUNC(void, FIM_CODE) module_FiM::InitFunction(void){
 }
 
-FUNC(void, FIM_CODE) interface_FiM_SchM_Main::MainFunction(void){
+FUNC(void, FIM_CODE) module_FiM::MainFunction(void){
 }
 
-FUNC(void, FIM_CODE) class_FiM::GetFunctionPermission(void){
+FUNC(void, FIM_CODE) class_FiM_Unused::GetFunctionPermission(void){
 }
 
-FUNC(void, FIM_CODE) class_FiM::SetFunctionAvailable(void){
+FUNC(void, FIM_CODE) class_FiM_Unused::SetFunctionAvailable(void){
 }
 
-FUNC(void, FIM_CODE) class_FiM::DemTriggerOnMonitorStatus(void){
+FUNC(void, FIM_CODE) class_FiM_Unused::DemTriggerOnMonitorStatus(void){
 }
 
-FUNC(void, FIM_CODE) class_FiM::DemTriggerOnComponentStatus(void){
+FUNC(void, FIM_CODE) class_FiM_Unused::DemTriggerOnComponentStatus(void){
 }
 
-FUNC(void, FIM_CODE) class_FiM::DemInitFunction(void){
+FUNC(void, FIM_CODE) class_FiM_Unused::DemInitFunction(void){
 }
 
-FUNC(void, FIM_CODE) class_FiM::GetVersionInfo(void){
+FUNC(void, FIM_CODE) class_FiM_Unused::GetVersionInfo(void){
 }
 
-FUNC(void, FIM_CODE) class_FiM::FunctionInhibition(void){
+FUNC(void, FIM_CODE) class_FiM_Unused::FunctionInhibition(void){
 }
 
-FUNC(void, FIM_CODE) class_FiM::ControlFunctionAvailable(void){
+FUNC(void, FIM_CODE) class_FiM_Unused::ControlFunctionAvailable(void){
 }
 
-FUNC(void, FIM_CODE) class_FiM::FunctionIdType(void){
+FUNC(void, FIM_CODE) class_FiM_Unused::FunctionIdType(void){
 }
 
 /*****************************************************/
