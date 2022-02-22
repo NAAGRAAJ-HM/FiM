@@ -7,7 +7,8 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-
+#include "FiM_EcuM.h"
+#include "FiM_SchM.h"
 #include "FiM_Unused.h"
 
 /*****************************************************/
@@ -21,7 +22,11 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class module_FiM : public class_module{
+class module_FiM:
+      public abstract_module
+   ,  public interface_FiM_EcuM
+   ,  public interface_FiM_SchM
+{
    public:
       FUNC(void, FIM_CODE) InitFunction   (void);
       FUNC(void, FIM_CODE) DeInitFunction (void);
@@ -41,13 +46,16 @@ class module_FiM : public class_module{
 /*****************************************************/
 module_FiM FiM;
 
-interface_EcuM_Client *EcuM_Client_ptr_FiM = &FiM;
-interface_SchM_Client *SchM_Client_ptr_FiM = &FiM;
+interface_FiM_EcuM *EcuM_Client_ptr_FiM = &FiM;
+interface_FiM_SchM *SchM_Client_ptr_FiM = &FiM;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
 FUNC(void, FIM_CODE) module_FiM::InitFunction(void){
+}
+
+FUNC(void, FIM_CODE) module_FiM::DeInitFunction(void){
 }
 
 FUNC(void, FIM_CODE) module_FiM::MainFunction(void){
