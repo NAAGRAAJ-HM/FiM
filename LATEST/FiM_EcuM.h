@@ -27,7 +27,8 @@ class interface_FiM_EcuM : public interface_EcuM_Client{
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, FIM_CODE) InitFunction(void);
+      virtual FUNC(void, FIM_CODE) InitFunction   (void) = 0;
+      virtual FUNC(void, FIM_CODE) DeInitFunction (void) = 0;
 };
 
 /*****************************************************/
