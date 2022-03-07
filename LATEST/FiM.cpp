@@ -24,8 +24,6 @@
 /*****************************************************/
 class module_FiM:
       public abstract_module
-   ,  public interface_FiM_EcuM
-   ,  public interface_FiM_SchM
 {
    public:
       FUNC(void, FIM_CODE) InitFunction   (void);
@@ -44,10 +42,9 @@ class module_FiM:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_FiM FiM;
-
-interface_FiM_EcuM *EcuM_Client_ptr_FiM = &FiM;
-interface_FiM_SchM *SchM_Client_ptr_FiM = &FiM;
+module_FiM     FiM;
+infEcuMClient* gptrinfEcuMClient_FiM = &FiM;
+infSchMClient* gptrinfSchMClient_FiM = &FiM;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
