@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_FiM_SchM *SchM_Client_ptr_FiM;
+extern infSchMClient *gptrinfSchMClient_FiM;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
