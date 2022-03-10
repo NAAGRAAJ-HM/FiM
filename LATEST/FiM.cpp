@@ -7,8 +7,8 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-#include "FiM_EcuM.h"
-#include "FiM_SchM.h"
+#include "infFiM_EcuM.h"
+#include "infFiM_SchM.h"
 #include "FiM_Unused.h"
 
 /*****************************************************/
@@ -28,6 +28,7 @@ class module_FiM:
    public:
       FUNC(void, FIM_CODE) InitFunction   (void);
       FUNC(void, FIM_CODE) DeInitFunction (void);
+      FUNC(void, FIM_CODE) GetVersionInfo (void);
       FUNC(void, FIM_CODE) MainFunction   (void);
 };
 
@@ -44,6 +45,7 @@ class module_FiM:
 /*****************************************************/
 module_FiM     FiM;
 infEcuMClient* gptrinfEcuMClient_FiM = &FiM;
+infDcmClient*  gptrinfDcmClient_FiM  = &FiM;
 infSchMClient* gptrinfSchMClient_FiM = &FiM;
 
 /*****************************************************/
@@ -53,6 +55,9 @@ FUNC(void, FIM_CODE) module_FiM::InitFunction(void){
 }
 
 FUNC(void, FIM_CODE) module_FiM::DeInitFunction(void){
+}
+
+FUNC(void, FIM_CODE) module_FiM::GetVersionInfo(void){
 }
 
 FUNC(void, FIM_CODE) module_FiM::MainFunction(void){
