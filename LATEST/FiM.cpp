@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "infFiM_Version.h"
+#include "FiM_Cfg.h"
 #include "infFiM_EcuM.h"
 #include "infFiM_Dcm.h"
 #include "infFiM_SchM.h"
@@ -15,10 +15,19 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define FIM_AR_RELEASE_MAJOR_VERSION                                           4
+#define FIM_AR_RELEASE_MINOR_VERSION                                           3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
+#if(FIM_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
+   #error "Incompatible FIM_AR_RELEASE_MAJOR_VERSION!"
+#endif
+
+#if(FIM_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
+   #error "Incompatible FIM_AR_RELEASE_MINOR_VERSION!"
+#endif
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
@@ -61,6 +70,11 @@ FUNC(void, FIM_CODE) module_FiM::DeInitFunction(void){
 }
 
 FUNC(void, FIM_CODE) module_FiM::GetVersionInfo(void){
+#if(STD_ON == FiM_DevErrorDetect)
+//TBD: API parameter check
+   Det_ReportError(
+   );
+#endif
 }
 
 FUNC(void, FIM_CODE) module_FiM::MainFunction(void){
