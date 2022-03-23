@@ -40,6 +40,16 @@ class module_FiM:
       FUNC(void, FIM_CODE) DeInitFunction (void);
       FUNC(void, FIM_CODE) GetVersionInfo (void);
       FUNC(void, FIM_CODE) MainFunction   (void);
+
+   private:
+      CONST(Std_TypeVersionInfo, FIM_CONST) VersionInfo = {
+            0x0000
+         ,  0xFFFF
+         ,  0x01
+         ,  '0'
+         ,  '1'
+         ,  '0'
+      };
 };
 
 /******************************************************************************/
