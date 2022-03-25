@@ -6,11 +6,11 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.h"
-#include "CfgFiM.h"
-#include "infFiM_EcuM.h"
-#include "infFiM_Dcm.h"
-#include "infFiM_SchM.h"
+#include "module.hpp"
+#include "CfgFiM.hpp"
+#include "infFiM_EcuM.hpp"
+#include "infFiM_Dcm.hpp"
+#include "infFiM_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -90,7 +90,7 @@ FUNC(void, FIM_CODE) module_FiM::GetVersionInfo(void){
 FUNC(void, FIM_CODE) module_FiM::MainFunction(void){
 }
 
-#include "FiM_Unused.h"
+#include "FiM_Unused.hpp"
 
 FUNC(void, FIM_CODE) class_FiM_Unused::GetFunctionPermission(void){
 }
