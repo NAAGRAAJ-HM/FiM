@@ -90,7 +90,17 @@ FUNC(void, FIM_CODE) module_FiM::GetVersionInfo(void){
 FUNC(void, FIM_CODE) module_FiM::MainFunction(void){
 }
 
-#include "FiM_Unused.hpp"
+class class_FiM_Unused{
+   public:
+      FUNC(void, FIM_CODE) GetFunctionPermission       (void);
+      FUNC(void, FIM_CODE) SetFunctionAvailable        (void);
+      FUNC(void, FIM_CODE) DemTriggerOnMonitorStatus   (void);
+      FUNC(void, FIM_CODE) DemTriggerOnComponentStatus (void);
+      FUNC(void, FIM_CODE) DemInitFunction             (void);
+      FUNC(void, FIM_CODE) FunctionInhibition          (void);
+      FUNC(void, FIM_CODE) ControlFunctionAvailable    (void);
+      FUNC(void, FIM_CODE) FunctionIdType              (void);
+};
 
 FUNC(void, FIM_CODE) class_FiM_Unused::GetFunctionPermission(void){
 }
