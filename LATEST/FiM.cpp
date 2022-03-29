@@ -7,7 +7,6 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.hpp"
-#include "CfgFiM.hpp"
 #include "infFiM_EcuM.hpp"
 #include "infFiM_Dcm.hpp"
 #include "infFiM_SchM.hpp"
@@ -36,37 +35,40 @@ class module_FiM:
       public abstract_module
 {
    public:
+      module_FiM(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
+      }
       FUNC(void, FIM_CODE) InitFunction   (void);
       FUNC(void, FIM_CODE) DeInitFunction (void);
-      FUNC(void, FIM_CODE) GetVersionInfo (void);
       FUNC(void, FIM_CODE) MainFunction   (void);
-
-   private:
-      CONST(Std_TypeVersionInfo, FIM_CONST) VersionInfo = {
-            0x0000
-         ,  0xFFFF
-         ,  0x01
-         ,  '0'
-         ,  '1'
-         ,  '0'
-      };
 };
+
+extern VAR(module_FiM, FIM_VAR) FiM;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
+CONSTP2VAR(infEcuMClient, FIM_VAR, FIM_CONST) gptrinfEcuMClient_FiM = &FiM;
+CONSTP2VAR(infDcmClient,  FIM_VAR, FIM_CONST) gptrinfDcmClient_FiM  = &FiM;
+CONSTP2VAR(infSchMClient, FIM_VAR, FIM_CONST) gptrinfSchMClient_FiM = &FiM;
 
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
+#include "CfgFiM.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_FiM, FIM_VAR) FiM;
-CONSTP2VAR(infEcuMClient, FIM_VAR, FIM_CONST) gptrinfEcuMClient_FiM = &FiM;
-CONSTP2VAR(infDcmClient,  FIM_VAR, FIM_CONST) gptrinfDcmClient_FiM  = &FiM;
-CONSTP2VAR(infSchMClient, FIM_VAR, FIM_CONST) gptrinfSchMClient_FiM = &FiM;
+VAR(module_FiM, FIM_VAR) FiM(
+   {
+         0x0000
+      ,  0xFFFF
+      ,  0x01
+      ,  '0'
+      ,  '1'
+      ,  '0'
+   }
+);
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
@@ -77,14 +79,6 @@ FUNC(void, FIM_CODE) module_FiM::InitFunction(void){
 
 FUNC(void, FIM_CODE) module_FiM::DeInitFunction(void){
    FiM.IsInitDone = E_NOT_OK;
-}
-
-FUNC(void, FIM_CODE) module_FiM::GetVersionInfo(void){
-#if(STD_ON == FiM_DevErrorDetect)
-//TBD: API parameter check
-   Det_ReportError(
-   );
-#endif
 }
 
 FUNC(void, FIM_CODE) module_FiM::MainFunction(void){
