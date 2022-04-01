@@ -78,6 +78,7 @@ VAR(module_FiM, FIM_VAR) FiM(
 FUNC(void, FIM_CODE) module_FiM::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, FIM_CONFIG_DATA, FIM_APPL_CONST) lptrCfgModule
 ){
+#if(STD_ON == FiM_InitCheck)
    if(E_OK == IsInitDone){
 #if(STD_ON == FiM_DevErrorDetect)
       Det_ReportError(
@@ -85,6 +86,7 @@ FUNC(void, FIM_CODE) module_FiM::InitFunction(
 #endif
    }
    else{
+#endif
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == FiM_DevErrorDetect)
          Det_ReportError(
@@ -96,10 +98,13 @@ FUNC(void, FIM_CODE) module_FiM::InitFunction(
 // use PBcfg_FiM as back-up configuration
       }
       IsInitDone = E_OK;
+#if(STD_ON == FiM_InitCheck)
    }
+#endif
 }
 
 FUNC(void, FIM_CODE) module_FiM::DeInitFunction(void){
+#if(STD_ON == FiM_InitCheck)
    if(E_OK != IsInitDone){
 #if(STD_ON == FiM_DevErrorDetect)
       Det_ReportError(
@@ -107,11 +112,26 @@ FUNC(void, FIM_CODE) module_FiM::DeInitFunction(void){
 #endif
    }
    else{
+#endif
       IsInitDone = E_NOT_OK;
+#if(STD_ON == FiM_InitCheck)
    }
+#endif
 }
 
 FUNC(void, FIM_CODE) module_FiM::MainFunction(void){
+#if(STD_ON == FiM_InitCheck)
+   if(E_OK != IsInitDone){
+#if(STD_ON == FiM_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+#endif
+#if(STD_ON == FiM_InitCheck)
+   }
+#endif
 }
 
 class class_FiM_Unused{
