@@ -31,8 +31,21 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
+class class_FiM_Functionality{
+   public:
+      FUNC(void, FIM_CODE) GetFunctionPermission       (void);
+      FUNC(void, FIM_CODE) SetFunctionAvailable        (void);
+      FUNC(void, FIM_CODE) DemTriggerOnMonitorStatus   (void);
+      FUNC(void, FIM_CODE) DemTriggerOnComponentStatus (void);
+      FUNC(void, FIM_CODE) DemInitFunction             (void);
+      FUNC(void, FIM_CODE) FunctionInhibition          (void);
+      FUNC(void, FIM_CODE) ControlFunctionAvailable    (void);
+      FUNC(void, FIM_CODE) FunctionIdType              (void);
+};
+
 class module_FiM:
       public abstract_module
+   ,  public class_FiM_Functionality
 {
    public:
       module_FiM(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
@@ -84,6 +97,10 @@ FUNC(void, FIM_CODE) module_FiM::InitFunction(
    if(E_OK == IsInitDone){
 #if(STD_ON == FiM_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -92,6 +109,10 @@ FUNC(void, FIM_CODE) module_FiM::InitFunction(
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == FiM_DevErrorDetect)
          Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
          );
 #endif
       }
@@ -116,6 +137,10 @@ FUNC(void, FIM_CODE) module_FiM::DeInitFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == FiM_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -132,6 +157,10 @@ FUNC(void, FIM_CODE) module_FiM::MainFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == FiM_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -142,40 +171,28 @@ FUNC(void, FIM_CODE) module_FiM::MainFunction(void){
 #endif
 }
 
-class class_FiM_Unused{
-   public:
-      FUNC(void, FIM_CODE) GetFunctionPermission       (void);
-      FUNC(void, FIM_CODE) SetFunctionAvailable        (void);
-      FUNC(void, FIM_CODE) DemTriggerOnMonitorStatus   (void);
-      FUNC(void, FIM_CODE) DemTriggerOnComponentStatus (void);
-      FUNC(void, FIM_CODE) DemInitFunction             (void);
-      FUNC(void, FIM_CODE) FunctionInhibition          (void);
-      FUNC(void, FIM_CODE) ControlFunctionAvailable    (void);
-      FUNC(void, FIM_CODE) FunctionIdType              (void);
-};
-
-FUNC(void, FIM_CODE) class_FiM_Unused::GetFunctionPermission(void){
+FUNC(void, FIM_CODE) class_FiM_Functionality::GetFunctionPermission(void){
 }
 
-FUNC(void, FIM_CODE) class_FiM_Unused::SetFunctionAvailable(void){
+FUNC(void, FIM_CODE) class_FiM_Functionality::SetFunctionAvailable(void){
 }
 
-FUNC(void, FIM_CODE) class_FiM_Unused::DemTriggerOnMonitorStatus(void){
+FUNC(void, FIM_CODE) class_FiM_Functionality::DemTriggerOnMonitorStatus(void){
 }
 
-FUNC(void, FIM_CODE) class_FiM_Unused::DemTriggerOnComponentStatus(void){
+FUNC(void, FIM_CODE) class_FiM_Functionality::DemTriggerOnComponentStatus(void){
 }
 
-FUNC(void, FIM_CODE) class_FiM_Unused::DemInitFunction(void){
+FUNC(void, FIM_CODE) class_FiM_Functionality::DemInitFunction(void){
 }
 
-FUNC(void, FIM_CODE) class_FiM_Unused::FunctionInhibition(void){
+FUNC(void, FIM_CODE) class_FiM_Functionality::FunctionInhibition(void){
 }
 
-FUNC(void, FIM_CODE) class_FiM_Unused::ControlFunctionAvailable(void){
+FUNC(void, FIM_CODE) class_FiM_Functionality::ControlFunctionAvailable(void){
 }
 
-FUNC(void, FIM_CODE) class_FiM_Unused::FunctionIdType(void){
+FUNC(void, FIM_CODE) class_FiM_Functionality::FunctionIdType(void){
 }
 
 /******************************************************************************/
