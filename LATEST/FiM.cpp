@@ -31,18 +31,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class class_FiM_Functionality{
-   public:
-      FUNC(void, FIM_CODE) GetFunctionPermission       (void);
-      FUNC(void, FIM_CODE) SetFunctionAvailable        (void);
-      FUNC(void, FIM_CODE) DemTriggerOnMonitorStatus   (void);
-      FUNC(void, FIM_CODE) DemTriggerOnComponentStatus (void);
-      FUNC(void, FIM_CODE) DemInitFunction             (void);
-      FUNC(void, FIM_CODE) FunctionInhibition          (void);
-      FUNC(void, FIM_CODE) ControlFunctionAvailable    (void);
-      FUNC(void, FIM_CODE) FunctionIdType              (void);
-};
-
 class module_FiM:
       public abstract_module
    ,  public class_FiM_Functionality
