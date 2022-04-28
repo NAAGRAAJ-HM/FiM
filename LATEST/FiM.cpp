@@ -7,6 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "FiM_core.hpp"
 #include "infFiM_EcuM.hpp"
 #include "infFiM_Dcm.hpp"
 #include "infFiM_SchM.hpp"
