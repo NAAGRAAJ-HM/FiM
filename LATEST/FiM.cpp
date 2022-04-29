@@ -7,10 +7,9 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "CfgFiM.hpp"
 #include "FiM_core.hpp"
-#include "infFiM_EcuM.hpp"
-#include "infFiM_Dcm.hpp"
-#include "infFiM_SchM.hpp"
+#include "infFiM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -44,6 +43,7 @@ class module_FiM:
       );
       FUNC(void, FIM_CODE) DeInitFunction (void);
       FUNC(void, FIM_CODE) MainFunction   (void);
+      FIM_CORE_FUNCTIONALITIES
 };
 
 extern VAR(module_FiM, FIM_VAR) FiM;
@@ -58,7 +58,6 @@ CONSTP2VAR(infSchMClient, FIM_VAR, FIM_CONST) gptrinfSchMClient_FiM = &FiM;
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
-#include "CfgFiM.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
