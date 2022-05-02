@@ -159,28 +159,28 @@ FUNC(void, FIM_CODE) module_FiM::MainFunction(void){
 #endif
 }
 
-FUNC(void, FIM_CODE) class_FiM_Functionality::GetFunctionPermission(void){
+FUNC(void, FIM_CODE) module_FiM::GetFunctionPermission(void){
 }
 
-FUNC(void, FIM_CODE) class_FiM_Functionality::SetFunctionAvailable(void){
+FUNC(void, FIM_CODE) module_FiM::SetFunctionAvailable(void){
 }
 
-FUNC(void, FIM_CODE) class_FiM_Functionality::DemTriggerOnMonitorStatus(void){
+FUNC(void, FIM_CODE) module_FiM::DemTriggerOnMonitorStatus(void){
 }
 
-FUNC(void, FIM_CODE) class_FiM_Functionality::DemTriggerOnComponentStatus(void){
+FUNC(void, FIM_CODE) module_FiM::DemTriggerOnComponentStatus(void){
 }
 
-FUNC(void, FIM_CODE) class_FiM_Functionality::DemInitFunction(void){
+FUNC(void, FIM_CODE) module_FiM::DemInitFunction(void){
 }
 
-FUNC(void, FIM_CODE) class_FiM_Functionality::FunctionInhibition(void){
+FUNC(void, FIM_CODE) module_FiM::FunctionInhibition(void){
 }
 
-FUNC(void, FIM_CODE) class_FiM_Functionality::ControlFunctionAvailable(void){
+FUNC(void, FIM_CODE) module_FiM::ControlFunctionAvailable(void){
 }
 
-FUNC(void, FIM_CODE) class_FiM_Functionality::FunctionIdType(void){
+FUNC(void, FIM_CODE) module_FiM::FunctionIdType(void){
 }
 
 /******************************************************************************/
