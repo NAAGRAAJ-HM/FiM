@@ -113,7 +113,7 @@ FUNC(void, FIM_CODE) module_FiM::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  FIM_E_UNINIT
       );
 #endif
    }
@@ -133,7 +133,7 @@ FUNC(void, FIM_CODE) module_FiM::DeInitFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  FIM_E_UNINIT
       );
 #endif
    }
@@ -152,7 +152,7 @@ FUNC(void, FIM_CODE) module_FiM::MainFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  FIM_E_UNINIT
       );
 #endif
    }
