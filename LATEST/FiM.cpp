@@ -89,7 +89,10 @@ FUNC(void, FIM_CODE) module_FiM::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, FIM_CONFIG_DATA, FIM_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == FiM_InitCheck)
-   if(E_OK != IsInitDone){
+   if(
+         E_OK
+      != IsInitDone
+   ){
 #endif
       if(NULL_PTR != lptrCfgModule){
          if(STD_HIGH){
@@ -127,7 +130,10 @@ FUNC(void, FIM_CODE) module_FiM::InitFunction(
 
 FUNC(void, FIM_CODE) module_FiM::DeInitFunction(void){
 #if(STD_ON == FiM_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == FiM_InitCheck)
       IsInitDone = E_NOT_OK;
@@ -147,7 +153,10 @@ FUNC(void, FIM_CODE) module_FiM::DeInitFunction(void){
 
 FUNC(void, FIM_CODE) module_FiM::MainFunction(void){
 #if(STD_ON == FiM_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == FiM_InitCheck)
    }
