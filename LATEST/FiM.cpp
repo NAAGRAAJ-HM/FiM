@@ -9,7 +9,7 @@
 #include "Module.hpp"
 #include "CfgFiM.hpp"
 #include "FiM_core.hpp"
-#include "infFiM.hpp"
+#include "infFiM_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -32,6 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_FiM:
+   INTERFACES_EXPORTED_FIM
       public abstract_module
    ,  public class_FiM_Functionality
 {
