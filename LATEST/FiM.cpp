@@ -32,7 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_FiM:
-   INTERFACES_EXPORTED_FIM
+      INTERFACES_EXPORTED_FIM
       public abstract_module
    ,  public class_FiM_Functionality
 {
