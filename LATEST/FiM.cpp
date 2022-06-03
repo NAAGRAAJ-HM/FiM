@@ -10,6 +10,7 @@
 #include "CfgFiM.hpp"
 #include "FiM_core.hpp"
 #include "infFiM_Exp.hpp"
+#include "infFiM_Imp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
