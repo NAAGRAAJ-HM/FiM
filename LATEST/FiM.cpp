@@ -74,10 +74,10 @@ CONSTP2VAR(infSchMClient, FIM_VAR, FIM_CONST) gptrinfSchMClient_FiM = &FiM;
 VAR(module_FiM, FIM_VAR) FiM(
    {
 #if(STD_ON == _ReSIM)
-   char strModuleName[6] = "FIM";
+         "FiM"
 #else
 #endif
-         FIM_AR_RELEASE_VERSION_MAJOR
+      ,  FIM_AR_RELEASE_VERSION_MAJOR
       ,  FIM_AR_RELEASE_VERSION_MINOR
       ,  0x00
       ,  0xFF
