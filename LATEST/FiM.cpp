@@ -82,12 +82,7 @@ FUNC(void, FIM_CODE) module_FiM::InitFunction(
    ){
 #endif
       if(NULL_PTR != lptrCfgModule){
-         if(STD_HIGH){
-            lptrCfg = lptrCfgModule;
-         }
-         else{
-            lptrCfg = &PBcfgFiM;
-         }
+         lptrCfg = lptrCfgModule;
       }
       else{
 #if(STD_ON == FiM_DevErrorDetect)
