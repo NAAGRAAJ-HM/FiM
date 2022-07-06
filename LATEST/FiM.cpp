@@ -7,9 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
-#include "CfgFiM.hpp"
-#include "FiM_core.hpp"
-#include "infFiM_Exp.hpp"
+#include "FiM.hpp"
 #include "infFiM_Imp.hpp"
 
 /******************************************************************************/
@@ -32,26 +30,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_FiM:
-      INTERFACES_EXPORTED_FIM
-      public abstract_module
-   ,  public class_FiM_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-
-   public:
-      FUNC(void, FIM_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, FIM_CONFIG_DATA, FIM_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, FIM_CODE) DeInitFunction (void);
-      FUNC(void, FIM_CODE) MainFunction   (void);
-      FIM_CORE_FUNCTIONALITIES
-};
-
-extern VAR(module_FiM, FIM_VAR) FiM;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
