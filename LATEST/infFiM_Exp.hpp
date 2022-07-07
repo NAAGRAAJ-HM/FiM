@@ -8,9 +8,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "infFiM_EcuM.hpp"
-#include "infFiM_Dcm.hpp"
 #include "infFiM_Det.hpp"
-#include "infFiM_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
