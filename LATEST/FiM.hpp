@@ -7,6 +7,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "ConstFiM.hpp"
 #include "CfgFiM.hpp"
 #include "FiM_core.hpp"
 #include "infFiM_Exp.hpp"
@@ -31,13 +32,15 @@ class module_FiM:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
+      const ConstFiM_Type* lptrConst = (ConstFiM_Type*)NULL_PTR;
 
    public:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, FIM_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, FIM_CONFIG_DATA, FIM_APPL_CONST) lptrCfgModule
+            CONSTP2CONST(ConstModule_TypeAbstract, FIM_CONST,       FIM_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   FIM_CONFIG_DATA, FIM_APPL_CONST) lptrCfgModule
       );
       FUNC(void, FIM_CODE) DeInitFunction (void);
       FUNC(void, FIM_CODE) MainFunction   (void);

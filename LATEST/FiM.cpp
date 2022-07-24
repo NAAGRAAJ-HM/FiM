@@ -48,7 +48,8 @@ VAR(module_FiM, FIM_VAR) FiM;
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, FIM_CODE) module_FiM::InitFunction(
-   CONSTP2CONST(CfgModule_TypeAbstract, FIM_CONFIG_DATA, FIM_APPL_CONST) lptrCfgModule
+      CONSTP2CONST(ConstModule_TypeAbstract, FIM_CONST,       FIM_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   FIM_CONFIG_DATA, FIM_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == FiM_InitCheck)
    if(
@@ -56,8 +57,12 @@ FUNC(void, FIM_CODE) module_FiM::InitFunction(
       != IsInitDone
    ){
 #endif
-      if(NULL_PTR != lptrCfgModule){
-         lptrCfg = lptrCfgModule;
+      if(
+            (NULL_PTR != lptrConstModule)
+         && (NULL_PTR != lptrCfgModule)
+      ){
+         lptrConst = lptrConstModule;
+         lptrCfg   = lptrCfgModule;
       }
       else{
 #if(STD_ON == FiM_DevErrorDetect)
