@@ -61,7 +61,7 @@ FUNC(void, FIM_CODE) module_FiM::InitFunction(
             (NULL_PTR != lptrConstModule)
          && (NULL_PTR != lptrCfgModule)
       ){
-         lptrConst = lptrConstModule;
+         lptrConst = (const ConstFiM_Type*)lptrConstModule;
          lptrCfg   = lptrCfgModule;
       }
       else{
