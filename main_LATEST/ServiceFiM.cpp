@@ -13,18 +13,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define FIM_AR_RELEASE_VERSION_MAJOR                                           4
-#define FIM_AR_RELEASE_VERSION_MINOR                                           3
+#define SERVICEFIM_AR_RELEASE_VERSION_MAJOR                                           4
+#define SERVICEFIM_AR_RELEASE_VERSION_MINOR                                           3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(FIM_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
-   #error "Incompatible FIM_AR_RELEASE_VERSION_MAJOR!"
+#if(SERVICEFIM_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible SERVICEFIM_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(FIM_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
-   #error "Incompatible FIM_AR_RELEASE_VERSION_MINOR!"
+#if(SERVICEFIM_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible SERVICEFIM_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -42,14 +42,14 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_ServiceFiM, FIM_VAR) ServiceFiM;
+VAR(module_ServiceFiM, SERVICEFIM_VAR) ServiceFiM;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, FIM_CODE) module_ServiceFiM::InitFunction(
-      CONSTP2CONST(ConstModule_TypeAbstract, FIM_CONST,       FIM_APPL_CONST) lptrConstModule
-   ,  CONSTP2CONST(CfgModule_TypeAbstract,   FIM_CONFIG_DATA, FIM_APPL_CONST) lptrCfgModule
+FUNC(void, SERVICEFIM_CODE) module_ServiceFiM::InitFunction(
+      CONSTP2CONST(ConstModule_TypeAbstract, SERVICEFIM_CONST,       SERVICEFIM_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   SERVICEFIM_CONFIG_DATA, SERVICEFIM_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == ServiceFiM_InitCheck)
    if(
@@ -83,14 +83,14 @@ FUNC(void, FIM_CODE) module_ServiceFiM::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  FIM_E_UNINIT
+         ,  SERVICEFIM_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, FIM_CODE) module_ServiceFiM::DeInitFunction(
+FUNC(void, SERVICEFIM_CODE) module_ServiceFiM::DeInitFunction(
    void
 ){
 #if(STD_ON == ServiceFiM_InitCheck)
@@ -108,14 +108,14 @@ FUNC(void, FIM_CODE) module_ServiceFiM::DeInitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  FIM_E_UNINIT
+         ,  SERVICEFIM_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, FIM_CODE) module_ServiceFiM::MainFunction(
+FUNC(void, SERVICEFIM_CODE) module_ServiceFiM::MainFunction(
    void
 ){
 #if(STD_ON == ServiceFiM_InitCheck)
@@ -132,49 +132,49 @@ FUNC(void, FIM_CODE) module_ServiceFiM::MainFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  FIM_E_UNINIT
+         ,  SERVICEFIM_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, FIM_CODE) module_ServiceFiM::GetFunctionPermission(
+FUNC(void, SERVICEFIM_CODE) module_ServiceFiM::GetFunctionPermission(
    void
 ){
 }
 
-FUNC(void, FIM_CODE) module_ServiceFiM::SetFunctionAvailable(
+FUNC(void, SERVICEFIM_CODE) module_ServiceFiM::SetFunctionAvailable(
    void
 ){
 }
 
-FUNC(void, FIM_CODE) module_ServiceFiM::ServiceDemTriggerOnMonitorStatus(
+FUNC(void, SERVICEFIM_CODE) module_ServiceFiM::ServiceDemTriggerOnMonitorStatus(
    void
 ){
 }
 
-FUNC(void, FIM_CODE) module_ServiceFiM::ServiceDemTriggerOnServiceComponentStatus(
+FUNC(void, SERVICEFIM_CODE) module_ServiceFiM::ServiceDemTriggerOnServiceComponentStatus(
    void
 ){
 }
 
-FUNC(void, FIM_CODE) module_ServiceFiM::ServiceDemInitFunction(
+FUNC(void, SERVICEFIM_CODE) module_ServiceFiM::ServiceDemInitFunction(
    void
 ){
 }
 
-FUNC(void, FIM_CODE) module_ServiceFiM::FunctionInhibition(
+FUNC(void, SERVICEFIM_CODE) module_ServiceFiM::FunctionInhibition(
    void
 ){
 }
 
-FUNC(void, FIM_CODE) module_ServiceFiM::ControlFunctionAvailable(
+FUNC(void, SERVICEFIM_CODE) module_ServiceFiM::ControlFunctionAvailable(
    void
 ){
 }
 
-FUNC(void, FIM_CODE) module_ServiceFiM::FunctionIdType(
+FUNC(void, SERVICEFIM_CODE) module_ServiceFiM::FunctionIdType(
    void
 ){
 }

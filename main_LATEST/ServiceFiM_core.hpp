@@ -12,25 +12,25 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define FIM_CORE_FUNCTIONALITIES                                               \
-              FUNC(void, FIM_CODE) GetFunctionPermission       (void);         \
-              FUNC(void, FIM_CODE) SetFunctionAvailable        (void);         \
-              FUNC(void, FIM_CODE) ServiceDemTriggerOnMonitorStatus   (void);         \
-              FUNC(void, FIM_CODE) ServiceDemTriggerOnServiceComponentStatus (void);         \
-              FUNC(void, FIM_CODE) ServiceDemInitFunction             (void);         \
-              FUNC(void, FIM_CODE) FunctionInhibition          (void);         \
-              FUNC(void, FIM_CODE) ControlFunctionAvailable    (void);         \
-              FUNC(void, FIM_CODE) FunctionIdType              (void);         \
+#define SERVICEFIM_CORE_FUNCTIONALITIES                                               \
+              FUNC(void, SERVICEFIM_CODE) GetFunctionPermission       (void);         \
+              FUNC(void, SERVICEFIM_CODE) SetFunctionAvailable        (void);         \
+              FUNC(void, SERVICEFIM_CODE) ServiceDemTriggerOnMonitorStatus   (void);         \
+              FUNC(void, SERVICEFIM_CODE) ServiceDemTriggerOnServiceComponentStatus (void);         \
+              FUNC(void, SERVICEFIM_CODE) ServiceDemInitFunction             (void);         \
+              FUNC(void, SERVICEFIM_CODE) FunctionInhibition          (void);         \
+              FUNC(void, SERVICEFIM_CODE) ControlFunctionAvailable    (void);         \
+              FUNC(void, SERVICEFIM_CODE) FunctionIdType              (void);         \
 
-#define FIM_CORE_FUNCTIONALITIES_VIRTUAL                                       \
-      virtual FUNC(void, FIM_CODE) GetFunctionPermission       (void) = 0;     \
-      virtual FUNC(void, FIM_CODE) SetFunctionAvailable        (void) = 0;     \
-      virtual FUNC(void, FIM_CODE) ServiceDemTriggerOnMonitorStatus   (void) = 0;     \
-      virtual FUNC(void, FIM_CODE) ServiceDemTriggerOnServiceComponentStatus (void) = 0;     \
-      virtual FUNC(void, FIM_CODE) ServiceDemInitFunction             (void) = 0;     \
-      virtual FUNC(void, FIM_CODE) FunctionInhibition          (void) = 0;     \
-      virtual FUNC(void, FIM_CODE) ControlFunctionAvailable    (void) = 0;     \
-      virtual FUNC(void, FIM_CODE) FunctionIdType              (void) = 0;     \
+#define SERVICEFIM_CORE_FUNCTIONALITIES_VIRTUAL                                       \
+      virtual FUNC(void, SERVICEFIM_CODE) GetFunctionPermission       (void) = 0;     \
+      virtual FUNC(void, SERVICEFIM_CODE) SetFunctionAvailable        (void) = 0;     \
+      virtual FUNC(void, SERVICEFIM_CODE) ServiceDemTriggerOnMonitorStatus   (void) = 0;     \
+      virtual FUNC(void, SERVICEFIM_CODE) ServiceDemTriggerOnServiceComponentStatus (void) = 0;     \
+      virtual FUNC(void, SERVICEFIM_CODE) ServiceDemInitFunction             (void) = 0;     \
+      virtual FUNC(void, SERVICEFIM_CODE) FunctionInhibition          (void) = 0;     \
+      virtual FUNC(void, SERVICEFIM_CODE) ControlFunctionAvailable    (void) = 0;     \
+      virtual FUNC(void, SERVICEFIM_CODE) FunctionIdType              (void) = 0;     \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -41,7 +41,7 @@
 /******************************************************************************/
 class class_ServiceFiM_Functionality{
    public:
-      FIM_CORE_FUNCTIONALITIES_VIRTUAL
+      SERVICEFIM_CORE_FUNCTIONALITIES_VIRTUAL
 };
 
 /******************************************************************************/
