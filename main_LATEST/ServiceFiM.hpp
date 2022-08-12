@@ -24,7 +24,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_ServiceFiM:
-      INTERFACES_EXMCALPORTED_SERVICEFIM
+      INTERFACES_EXPORTED_SERVICEFIM
       public abstract_module
    ,  public class_ServiceFiM_Functionality
 {
