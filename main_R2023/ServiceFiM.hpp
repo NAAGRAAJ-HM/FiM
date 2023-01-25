@@ -1,13 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : ServiceFiM.hpp                                                           */
+/* File   : ServiceFiM.hpp                                                    */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstServiceFiM.hpp"
+#include "infServiceFiM_ServiceNvM_Types.hpp"
 #include "CfgServiceFiM.hpp"
 #include "ServiceFiM_core.hpp"
 #include "infServiceFiM_Exp.hpp"
