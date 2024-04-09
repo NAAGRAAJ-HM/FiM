@@ -37,12 +37,10 @@
 #define FIM_START_SEC_ROM_CODE
 #include "FiM_MemMap.hpp"
 
-LOCAL_INLINE boolean FiM_Priv_IsInhibitionSet(uint8 statusByte_u8, FiM_InhibitionMaskType maskType_uo)
-{
+LOCAL_INLINE boolean FiM_Priv_IsInhibitionSet(uint8 statusByte_u8, FiM_InhibitionMaskType maskType_uo){
    boolean retVal_b = FALSE;
 
-   switch(maskType_uo)
-   {
+   switch(maskType_uo){
         case FIM_CFG_LAST_FAILED:
             if((statusByte_u8 & FIM_LAST_FAILED_MASK) == FIM_LAST_FAILED_VALUE)
             {
@@ -88,16 +86,14 @@ LOCAL_INLINE boolean FiM_Priv_IsInhibitionSet(uint8 statusByte_u8, FiM_Inhibitio
 }
 
 LOCAL_INLINE boolean FiM_Priv_IsInhibitionChanged(uint8 statusByteNew_u8, uint8 statusByteOld_u8
-   ,     FiM_InhibitionMaskType maskType_uo, boolean* inhStatusNew_b)
-{
+   ,     FiM_InhibitionMaskType maskType_uo, boolean* inhStatusNew_b){
    boolean inhStatusOld_b = FiM_Priv_IsInhibitionSet(statusByteOld_u8, maskType_uo);
     *inhStatusNew_b = FiM_Priv_IsInhibitionSet(statusByteNew_u8, maskType_uo);
 
     return (*inhStatusNew_b != inhStatusOld_b);
 }
 
-LOCAL_INLINE boolean FiM_Priv_IsInhMaskServ07Relevant(FiM_InhibitionMaskType maskType_uo)
-{
+LOCAL_INLINE boolean FiM_Priv_IsInhMaskServ07Relevant(FiM_InhibitionMaskType maskType_uo){
     return ((maskType_uo == FIM_CFG_LAST_FAILED) || (maskType_uo == FIM_CFG_TESTED_AND_FAILED)
             || (maskType_uo == FIM_CFG_FAILED_OR_NOT_TESTED));
 }

@@ -45,14 +45,12 @@ void FiM_Priv_StatusInit(void);
 
 #if(FIM_CFG_DEM_TRIGGERFIMREPORTS == FIM_CFG_ON)
 
-LOCAL_INLINE FiM_FIdStatusCounterType FiM_Priv_FIdGetInhibitCounter(FiM_FunctionIdType FId)
-{
+LOCAL_INLINE FiM_FIdStatusCounterType FiM_Priv_FIdGetInhibitCounter(FiM_FunctionIdType FId){
     return (FiM_FIdStatusCounter_auo[FId]);
 }
 #endif
 
-LOCAL_INLINE boolean FiM_Priv_FIdGetPermission(FiM_FunctionIdType FId)
-{
+LOCAL_INLINE boolean FiM_Priv_FIdGetPermission(FiM_FunctionIdType FId){
    boolean FiM_PermissionStatus = FALSE;
 
 #if(FIM_CFG_DEM_TRIGGERFIMREPORTS == FIM_CFG_OFF)
@@ -70,28 +68,24 @@ LOCAL_INLINE boolean FiM_Priv_FIdGetPermission(FiM_FunctionIdType FId)
 
 #if(FIM_CFG_DEM_TRIGGERFIMREPORTS == FIM_CFG_ON)
 
-LOCAL_INLINE void FiM_Priv_FIdCountInc(FiM_FunctionIdType FId)
-{
+LOCAL_INLINE void FiM_Priv_FIdCountInc(FiM_FunctionIdType FId){
     FIM_PRIV_ENTERLOCK_STATUS();
 
-   if(FiM_FIdStatusCounter_auo[FId] < FIM_CFG_STATUSCOUNTERMAX )
-   {
+   if(FiM_FIdStatusCounter_auo[FId] < FIM_CFG_STATUSCOUNTERMAX ){
         FiM_FIdStatusCounter_auo[FId]++;
    }
 
     FIM_PRIV_EXITLOCK_STATUS();
 }
 
-LOCAL_INLINE void FiM_Priv_FIdCountDec(FiM_FunctionIdType FId)
-{
+LOCAL_INLINE void FiM_Priv_FIdCountDec(FiM_FunctionIdType FId){
 #if(FIM_CFG_DEV_ERROR_DETECT == FIM_CFG_ON)
    boolean FiM_DetErrorFlag = FALSE;
 #endif
 
     FIM_PRIV_ENTERLOCK_STATUS();
 
-   if( FiM_FIdStatusCounter_auo[FId] > 0 )
-   {
+   if( FiM_FIdStatusCounter_auo[FId] > 0 ){
         FiM_FIdStatusCounter_auo[FId]--;
    }
 #if(FIM_CFG_DEV_ERROR_DETECT == FIM_CFG_ON)
@@ -105,15 +99,13 @@ LOCAL_INLINE void FiM_Priv_FIdCountDec(FiM_FunctionIdType FId)
 
 #if(FIM_CFG_DEV_ERROR_DETECT == FIM_CFG_ON)
 
-   if(FiM_DetErrorFlag == TRUE)
-   {
+   if(FiM_DetErrorFlag == TRUE){
         FIM_PRIV_DET_ERROR(FIM_PRIV_FIDCOUNTDEC_ID,FIM_E_FID_COUNTERNEGATIVE);
    }
 #endif
 }
 
-LOCAL_INLINE void FiM_Priv_FIdCountReset(FiM_FunctionIdType FId)
-{
+LOCAL_INLINE void FiM_Priv_FIdCountReset(FiM_FunctionIdType FId){
     FIM_PRIV_ENTERLOCK_STATUS();
 
     FiM_FIdStatusCounter_auo[FId] = 0;
@@ -121,8 +113,7 @@ LOCAL_INLINE void FiM_Priv_FIdCountReset(FiM_FunctionIdType FId)
     FIM_PRIV_EXITLOCK_STATUS();
 }
 
-LOCAL_INLINE void FiM_Priv_FIdCountSet(FiM_FunctionIdType FId, const FiM_FIdStatusCounterType value)
-{
+LOCAL_INLINE void FiM_Priv_FIdCountSet(FiM_FunctionIdType FId, const FiM_FIdStatusCounterType value){
     FIM_PRIV_ENTERLOCK_STATUS();
 
     FiM_FIdStatusCounter_auo[FId] = (FiM_FIdStatusCounterType)FIM_PRIV_MIN(value,FIM_CFG_STATUSCOUNTERMAX);
@@ -132,24 +123,20 @@ LOCAL_INLINE void FiM_Priv_FIdCountSet(FiM_FunctionIdType FId, const FiM_FIdStat
 
 #if(FIM_CFG_SERVICE07_VISIBLE_ERROR_API == FIM_CFG_ON)
 
-LOCAL_INLINE void FiM_Priv_FIdServ07CountInc(FiM_FunctionIdType FId)
-{
+LOCAL_INLINE void FiM_Priv_FIdServ07CountInc(FiM_FunctionIdType FId){
     FIM_PRIV_ENTERLOCK_STATUS();
 
-   if(FiM_FIdServ07StatusCounter_auo[FId] < FIM_CFG_STATUSCOUNTERMAX )
-   {
+   if(FiM_FIdServ07StatusCounter_auo[FId] < FIM_CFG_STATUSCOUNTERMAX ){
         FiM_FIdServ07StatusCounter_auo[FId]++;
    }
 
     FIM_PRIV_EXITLOCK_STATUS();
 }
 
-LOCAL_INLINE void FiM_Priv_FIdServ07CountDec(FiM_FunctionIdType FId)
-{
+LOCAL_INLINE void FiM_Priv_FIdServ07CountDec(FiM_FunctionIdType FId){
     FIM_PRIV_ENTERLOCK_STATUS();
 
-   if( FiM_FIdServ07StatusCounter_auo[FId] > 0 )
-   {
+   if( FiM_FIdServ07StatusCounter_auo[FId] > 0 ){
         FiM_FIdServ07StatusCounter_auo[FId]--;
    }
 
@@ -161,16 +148,14 @@ LOCAL_INLINE void FiM_Priv_FIdServ07CountDec(FiM_FunctionIdType FId)
 
 #if(FIM_CFG_DEM_TRIGGERFIMREPORTS == FIM_CFG_OFF)
 
-LOCAL_INLINE void FiM_Priv_SetInhStatus(FiM_FunctionIdType FId_uo)
-{
+LOCAL_INLINE void FiM_Priv_SetInhStatus(FiM_FunctionIdType FId_uo){
 
     FiM_FIdStatusBitArray_au8[FiM_CurrentIdx][(FId_uo / 8)] |= ((uint8) (1u << (FId_uo % 8)));
 }
 
 #if(FIM_CFG_SERVICE07_VISIBLE_ERROR_API == FIM_CFG_ON)
 
-LOCAL_INLINE void FiM_Priv_SetServ07InhStatus(FiM_FunctionIdType FId_uo)
-{
+LOCAL_INLINE void FiM_Priv_SetServ07InhStatus(FiM_FunctionIdType FId_uo){
 
     FiM_FIdStatusServ07BitArray_au8[FiM_CurrentIdx][(FId_uo / 8)] |= ((uint8) (1u << (FId_uo % 8)));
 }
